@@ -1,0 +1,88 @@
+/* body {
+    background: linear-gradient(#e66465, #9198e5);
+    height: 100vh;
+} */
+
+.main-conteqner {
+    background-color: white;
+    width: 400px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 50px 50px 50px;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 150px;
+    padding-top: 5px;
+}
+.display {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 5px;
+    width: 88%;
+    height: 70px;
+    border-radius: 15px;
+    margin: auto;
+    text-align: end;
+}
+.display p {
+    font-size: 40px;
+    overflow: hidden;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 400px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    gap: 10px;
+}
+
+.btn {
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    width: 80px;
+    background-color: #333030;
+    color: white;
+}
+.zero {
+    width: 170px;
+}
+
+.red {
+    background-color: rgb(84, 22, 22);
+}
+.red:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.yellow {
+    background-color: #6a2929;
+}
+
+.ter {
+    background-color: rgb(122, 96, 96);
+}
+.ter:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.number:hover {
+    background-color: #8a8888;
+    color: rgb(0, 0, 0);
+}
+.btn:active {
+    background-color: black;
+}
+
+.item0 {
+    width: 170px;
+}
+.itemResult {
+    width: 170px;
+}
