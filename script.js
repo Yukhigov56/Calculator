@@ -1,72 +1,92 @@
+
 const addingNumbers = (a, b) => {
   return a + b;
-};
+} 
 
 const subtractingNumbers = (a, b) => {
   return a - b;
-};
+}
 
 const multiply = (a, b) => {
   return a * b;
-};
+}
 
 const separator = (a, b) => {
   return a / b;
-};
+}
 
-let num = "";
-let signn = "";
+
+let numOne = "";
+let sign = "";
 let numTwo = "";
 
-const operate = (num, signn, numTwo) => {
-  if (signn === "+") {
-    return num + numTwo;
-  } else if (signn === "-") {
-    return num - numTwo;
-  } else if (signn === "*") {
-    return num * numTwo;
-  } else if (signn === "/") {
-    return num / numTwo;
-  } else ["Что-то пошло не так"];
-};
 
-const display = document.querySelector(".display p");
-const btnCol = document.querySelectorAll(".number");
-const signCol = document.querySelectorAll(".operator");
+const operate = (numOne, sign, numTwo) => {
+  if (sign === "+") {
+    return addingNumbers(numOne, numTwo);  
+  }
+  else if (sign === "-") {
+    return subtractingNumbers(numOne, numTwo);
+  }
+  else if (sign === "*") {
+    return multiply(numOne, numTwo);
+  }
+  else if (sign === "/") {
+    return separator(numOne, numTwo);
+  }
+  else {
+    return "Что-то пошло не так!!!"
+  }
+}
 
-signCol.forEach((operator) => {
-    operator.addEventListener("click", (event) => {
-    signn = event.target.textContent;
-    display.textContent = signn
-  });
-});
 
-btnCol.forEach((number) => {
-  number.addEventListener("click", (event) => {
-    if (!signn) {
-      num += event.target.textContent;
-    display.textContent = num
-    } else {
-      numTwo += event.target.textContent;
-      display.textContent = numTwo
-    }
-  });
-});
+const display = document.querySelector('.display p')
+const clear = document.querySelector('.AC')
+const colNumber = document.querySelectorAll('.number')
+const signs = document.querySelectorAll('.operator')
+const equals = document.querySelector('.itemResult')
 
-const colResult = document.querySelector(".itemResult");
 
-colResult.addEventListener("click", () => {
-  const result = operate(+num, signn, +numTwo);
-  display.textContent = result;
-  num = result;
-  signn = 0;
-});
-
-const btnClear = document.querySelector(".AC");
-btnClear.addEventListener("click", () => {
-  num = "";
-  signn = "";
+clear.addEventListener('click', () => {
+  numOne = "";
+  sign = "";
   numTwo = "";
-  display.textContent = 0;
-});
+  display.textContent = "0"
+})
 
+
+signs.forEach(operator => {
+  operator.addEventListener('click', (event) => {
+    if (numOne !== "" && sign !== "" && numTwo !== "") {
+      const resultOne = operate(Number(numOne), sign, Number(numTwo));
+      numOne = resultOne;
+      numTwo = "";
+    } else {
+      "cfvbnm,."
+    }
+    
+    sign = event.target.textContent;
+    display.textContent = `${numOne} ${sign} ${numTwo}`
+    
+  })
+})
+
+
+colNumber.forEach(number => {
+  number.addEventListener('click', (event) => {
+    if (sign) {
+      numTwo += event.target.textContent;
+    }
+    else {
+      numOne += event.target.textContent;
+    }
+    display.textContent = `${numOne} ${sign} ${numTwo}`
+  })
+})
+
+
+equals.addEventListener('click', () => {
+  const result = operate(Number(numOne), sign, Number(numTwo))
+  display.textContent = result
+  console.log(result);
+})

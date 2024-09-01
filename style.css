@@ -13,6 +13,7 @@
     margin-top: 150px;
     padding-top: 5px;
 }
+
 .display {
     display: flex;
     justify-content: end;
@@ -24,6 +25,7 @@
     margin: auto;
     text-align: end;
 }
+
 .display p {
     font-size: 40px;
     overflow: hidden;
@@ -48,13 +50,15 @@
     background-color: #333030;
     color: white;
 }
+
 .zero {
-    width: 170px;
+    width: 80px;
 }
 
 .red {
     background-color: rgb(84, 22, 22);
 }
+
 .red:hover {
     background-color: #000000;
     color: white;
@@ -67,6 +71,7 @@
 .ter {
     background-color: rgb(122, 96, 96);
 }
+
 .ter:hover {
     background-color: #000000;
     color: white;
@@ -76,6 +81,7 @@
     background-color: #8a8888;
     color: rgb(0, 0, 0);
 }
+
 .btn:active {
     background-color: black;
 }
@@ -83,6 +89,7 @@
 .item0 {
     width: 170px;
 }
+
 .itemResult {
     width: 170px;
 }
