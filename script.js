@@ -62,7 +62,7 @@ signs.forEach(operator => {
       numOne = resultOne;
       numTwo = "";
     } else {
-      "cfvbnm,."
+      "error"
     }
     
     sign = event.target.textContent;
